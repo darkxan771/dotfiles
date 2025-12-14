@@ -1,0 +1,17 @@
+command = /opt/homebrew/bin//nu
+theme = TokyoNight Storm
+mouse-hide-while-typing = true
+auto-update = download
+window-padding-x = 8
+window-padding-y = 13
+window-inherit-working-directory = true
+macos-titlebar-style = hidden
+# font-family = FiraCode Nerd Font Mono
+font-family = Victor Mono
+font-size = 15
+cursor-style = bar
+link-url = true
+confirm-close-surface = false
+quick-terminal-position = bottom
+quick-terminal-size = 33%
+keybind = global:cmd+§=toggle_quick_terminal
