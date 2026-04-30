@@ -1,0 +1,81 @@
+[
+  { "prefix": "skip", "body": "\\bigskip\n", "desc": "LaTeX Bigskip" },
+
+  { "prefix": "mskip", "body": "\\medskip\n", "desc": "LaTeX Medskip" },
+
+  {
+    "prefix": "begin",
+    "body": "\\begin{$1}\n $0 \n\\end{$1}\n",
+    "desc": "LaTeX Begin/End Environment"
+  },
+  {
+    "prefix": "eq",
+    "body": "\\begin{equation}\n $0 \n\\end{equation}\n",
+    "desc": "LaTeX Equation Environment"
+  },
+  {
+    "prefix": "bali",
+    "body": "\\begin{align*}\n $0 \n\\end{align*}\n",
+    "desc": "LaTeX Align Environment"
+  },
+
+  {
+    "prefix": "mapi",
+    "body": "\\begin{align*}\n $0 &\\to  \\\\\\ \n  &\\mapsto  \n\\end{align*}\n",
+    "desc": "LaTeX Map Environment"
+  },
+
+  {
+    "prefix": "tikz",
+    "body": "\\begin{tikzpicture}[scale=1]\n $0 \n \\end{tikzpicture}\n",
+    "desc": "LaTeX TikZ Environment"
+  },
+
+  {
+    "prefix": "center",
+    "body": "\\begin{center}\n $0 \n \\end{center}\n",
+    "desc": "LaTeX Center Environment"
+  },
+
+  {
+    "prefix": "thm",
+    "body": "\\begin{theorem}\n $0 \n \\end{theorem}\n",
+    "desc": "LaTeX Theorem Environment"
+  },
+
+  {
+    "prefix": "prop",
+    "body": "\\begin{proposition}\n $0 \n \\end{proposition}\n",
+    "desc": "LaTeX Proposition Environment"
+  },
+
+  {
+    "prefix": "coro",
+    "body": "\\begin{corollary}\n $0 \n \\end{corollary}\n",
+    "desc": "LaTeX Corollary Environment"
+  },
+
+  {
+    "prefix": "rem",
+    "body": "\\begin{remark}\n $0 \n \\end{remark}\n",
+    "desc": "LaTeX Remark Environment"
+  },
+
+  {
+    "prefix": "exam",
+    "body": "\\begin{example}\n $0 \n \\end{example}\n",
+    "desc": "LaTeX Example Environment"
+  },
+
+  {
+    "prefix": "enum",
+    "body": "\\begin{enumerate}\n\t\\item $0 \n \\end{enumerate}\n",
+    "desc": "LaTeX Enumerate Environment"
+  },
+
+  {
+    "prefix": "item",
+    "body": "\\begin{itemize}\n\t\\item $0 \n \\end{itemize}\n",
+    "desc": "LaTeX Enumerate Environment"
+  }
+]

@@ -16,11 +16,6 @@ image_bound = [10000, 10000]
 edit = [{ run = 'nvim "$@"', block = true, desc = "nvim" }]
 # subl = [{ run = 'subl "$@"', desc = "subl" }]
 
-[open]
-prepend_rules = [
-  { name = "*.tex", use = "subl" },
-]
-
 [plugin]
 prepend_previewers = [
     { name = "*.csv", run = "rich-preview"}, # for csv files
