@@ -102,10 +102,6 @@ alias smail = nvim ~/notes/mail.md
 # CARAPACE
 source ($nu.cache-dir)/carapace.nu
 
-# TELEVISION
-mkdir ($nu.data-dir | path join "vendor/autoload")
-tv init nu | save -f ($nu.data-dir | path join "vendor/autoload/tv.nu")
-
 def aztec [] {
     tinty apply base16-aztec
 }
