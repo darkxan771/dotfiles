@@ -88,6 +88,7 @@ require("mason").setup()
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities.textDocument.completion.completionItem.snippetSupport = true
 
+-- https://github.com/neovim/nvim-lspconfig/blob/master/doc/configs.md
 vim.lsp.enable("pyright")
 vim.lsp.enable("jsonls")
 vim.lsp.enable("tombi")
@@ -104,6 +105,7 @@ vim.lsp.enable("ruff")
 vim.lsp.config("lua_ls", { settings = { Lua = { diagnostics = { globals = { "vim" } } } } })
 vim.lsp.enable("lua_ls")
 vim.lsp.enable("stylua")
+vim.lsp.enable("yamlls")
 
 vim.api.nvim_create_autocmd("BufEnter", {
 	callback = function(args)

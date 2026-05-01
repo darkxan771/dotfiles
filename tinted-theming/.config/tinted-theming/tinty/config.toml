@@ -21,7 +21,14 @@ hook = """
 tmux source-file %f
 """
 
-# 3. Neovim, Nushell
+# 3. Lazygit
+[[items]]
+path = "https://github.com/tinted-theming/tinted-lazygit"
+name = "tinted-lazygit"
+themes-dir = "themes"
+supported-systems = ["base16"]
+
+# 4. Neovim, Nushell
 [[items]]
 path = "https://github.com/tinted-theming/tinted-nvim"
 name = "tinted-nvim"
