@@ -31,6 +31,7 @@ vim.opt.clipboard = "unnamedplus"
 vim.opt.wildmode = { "list", "full" }
 vim.opt.wildoptions = "pum"
 vim.opt.pumborder = "rounded"
+vim.opt.pummaxwidth = 40
 vim.opt.backspace = "indent,eol,start"
 vim.opt.selection = "inclusive"
 vim.opt.encoding = "utf-8"

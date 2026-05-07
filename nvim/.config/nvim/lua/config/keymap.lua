@@ -2,6 +2,7 @@ return {
 	-- INDENT
 	vim.keymap.set("v", "<", "<gv"),
 	vim.keymap.set("v", ">", ">gv"),
+	vim.keymap.set("n", "<C-q>", "<C-v>", { desc = "Blockwise Visual Mode" }),
 	-- MOTIONS
 	vim.keymap.set("n", "<C-s>", ":%s/", { desc = "Find and replace" }),
 	vim.keymap.set("n", "gp", "$", { desc = "Go to the end of line", noremap = true }),

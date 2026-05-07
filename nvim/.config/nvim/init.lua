@@ -77,6 +77,7 @@ vim.pack.add({
 	"https://github.com/mason-org/mason.nvim",
 	"https://github.com/nvimtools/none-ls.nvim",
 	"https://github.com/dgagn/diagflow.nvim",
+	"https://github.com/folke/lazydev.nvim",
 	"https://github.com/christoomey/vim-tmux-navigator",
 })
 
@@ -152,6 +153,14 @@ vim.lsp.config("html", {
 	capabilities = capabilities,
 })
 vim.lsp.enable("html")
+vim.lsp.config("nushell", {
+	cmd = { "nu", "--lsp" },
+	filetypes = { "nu" },
+	root_dir = function(bufnr, on_dir)
+		on_dir(vim.fs.root(bufnr, { ".git" }) or vim.fs.dirname(vim.api.nvim_buf_get_name(bufnr)))
+	end,
+})
+vim.lsp.enable("nushell")
 vim.lsp.enable("texlab")
 vim.lsp.config("ruff", {
 	init_options = {

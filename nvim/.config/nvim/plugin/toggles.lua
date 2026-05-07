@@ -1,10 +1,13 @@
 vim.pack.add({
-	"https://github.com/jiaoshijie/undotree",
 	"https://github.com/tzhouhc/virt-counter.nvim",
 })
 
 -- UNDOTREE
-vim.keymap.set("n", "<leader>tu", "<cmd>lua require('undotree').toggle()<cr>", { desc = "Toggle undo tree" })
+vim.cmd("packadd nvim.undotree")
+vim.keymap.set("n", "<leader>tu", "<cmd>Undotree<cr>", { desc = "Toggle undo tree" })
+
+-- DIFF
+vim.cmd("packadd nvim.difftool")
 
 -- COUNTER
 require("virt-counter").setup({

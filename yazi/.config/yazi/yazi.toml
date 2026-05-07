@@ -1,5 +1,6 @@
 [mgr]
 ratio = [1, 4, 3]
+sort_by = "natural"
 sort_dir_first = true
 show_symlink = false
 linemode = "mtime"
@@ -11,8 +12,40 @@ max_height = 1500
 
 [tasks]
 image_bound = [10000, 10000]
+image_alloc = 1073741824
 
 [opener]
 edit = [{ run = 'nvim "$@"', block = true, desc = "nvim" }]
-# subl = [{ run = 'subl "$@"', desc = "subl" }]
 
+[plugin]
+prepend_preloaders = [
+  { mime = "{audio,video,image}/*", run = "mediainfo" },
+  { mime = "application/subrip", run = "mediainfo" },
+  { mime = "application/postscript", run = "mediainfo" },
+  { mime = "application/illustrator", run = "mediainfo" },
+  { mime = "application/dvb.ait", run = "mediainfo" },
+  { mime = "application/vnd.adobe.illustrator", run = "mediainfo" },
+  { mime = "image/x-eps", run = "mediainfo" },
+  { mime = "application/eps", run = "mediainfo" },
+  { url = "*.{ai,eps,ait}", run = "mediainfo" },
+]
+
+prepend_previewers = [
+  { mime = "{audio,video,image}/*", run = "mediainfo" },
+  { mime = "application/subrip", run = "mediainfo" },
+  { mime = "application/postscript", run = "mediainfo" },
+  { mime = "application/illustrator", run = "mediainfo" },
+  { mime = "application/dvb.ait", run = "mediainfo" },
+  { mime = "application/vnd.adobe.illustrator", run = "mediainfo" },
+  { mime = "image/x-eps", run = "mediainfo" },
+  { mime = "application/eps", run = "mediainfo" },
+  { url = "*.{ai,eps,ait}", run = "mediainfo" },
+  { url = "*.csv", run = "duckdb" },
+  { url = "*.tsv", run = "duckdb" },
+  { url = "*.db", run = "duckdb" },
+  { url = "*.duckdb", run = "duckdb" },
+  { url = "*.md", run = "rich-preview" },
+  { url = "*.rst", run = "rich-preview" },
+  { url = "*.ipynb", run = "rich-preview" },
+  { url = "*.json", run = "rich-preview" },
+]

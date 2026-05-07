@@ -16,12 +16,14 @@ path add "/Library/Tex/texbin"
 path add "/Library/Frameworks/Python.framework/Versions/3.14/bin"
 path add "~/.local/bin"
 path add "/Users/meliot/Library/Application Support/nushell/nupm/plugins/bin"
+path add "/Users/meliot/.duckdb/cli/latest"
 
 alias ff = fastfetch
 alias astro = astroterm -C -u -m -c --city=Paris
 alias pokemon = pokemon-colorscripts -r 
 alias matrix = cmatrix
 alias home = cd ~
+alias dotfiles = cd ~/dotfiles
 alias weather = http get wttr.in/tours
 
 # PALETTE

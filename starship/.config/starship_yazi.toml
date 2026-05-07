@@ -1,0 +1,97 @@
+"$schema" = 'https://starship.rs/config-schema.json'
+
+format = """
+$directory\
+$git_branch\
+$git_status\
+$c\
+$cpp\
+$rust\
+$golang\
+$nodejs\
+$php\
+$java\
+$kotlin\
+$haskell\
+$python\
+$time\
+$character"""
+
+[os]
+disabled = true
+
+[os.symbols]
+Windows = "󰍲"
+Ubuntu = "󰕈"
+SUSE = ""
+Raspbian = "󰐿"
+Mint = "󰣭"
+Macos = "󰀵"
+Manjaro = ""
+Linux = "󰌽"
+Gentoo = "󰣨"
+Fedora = "󰣛"
+Alpine = ""
+Amazon = ""
+Android = ""
+AOSC = ""
+Arch = "󰣇"
+Artix = "󰣇"
+EndeavourOS = ""
+CentOS = ""
+Debian = "󰣚"
+Redhat = "󱄛"
+RedHatEnterprise = "󱄛"
+Pop = ""
+
+[username]
+show_always = false
+format = " $user "
+aliases = {meliot = "xan"}
+
+[directory]
+format = " $path "
+truncation_length = 3
+truncation_symbol = "…/"
+
+[directory.substitutions]
+"Documents" = "󰈙 "
+"Downloads" = " "
+"Music" = " "
+"Pictures" = " "
+
+[git_branch]
+symbol = ""
+format = " $symbol $branch " 
+
+[git_status]
+format = "($all_status$ahead_behind )"
+
+[nodejs]
+symbol = ""
+format = " $symbol ($version) "
+
+[python]
+symbol = " "
+format = " $symbol ($version) "
+
+[lua]
+symbol = " "
+format = " $symbol ($version) "
+
+[rust]
+symbol = ""
+format = " $symbol ($version) "
+
+[golang]
+symbol = ""
+format = " $symbol ($version) "
+
+[php]
+symbol = ""
+format = " $symbol ($version) "
+
+[time]
+disabled = false
+time_format = "%T" 
+format = "  $time "
