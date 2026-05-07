@@ -3,12 +3,12 @@ vim.pack.add({
 })
 
 vim.g.vimtex_compiler_latexmk_engines = {
-	_ = "-xelatex",
+	_ = "-lualatex",
 }
 vim.g.vimtex_compiler_latexmk = {
 	executable = "latexmk",
 	options = {
-		"-xelatex",
+		"-lualatex",
 		"-shell-escape",
 		"-file-line-error",
 		"-synctex=1",

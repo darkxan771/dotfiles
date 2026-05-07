@@ -23,7 +23,7 @@ vim.api.nvim_create_autocmd("CmdlineChanged", {
 	end,
 })
 
--- TREESITTER AND LSP
+-- DIAGNOSTICS, TREESITTER AND LSP
 vim.api.nvim_create_autocmd("PackChanged", {
 	callback = function(ev)
 		local name, kind = ev.data.spec.name, ev.data.kind
@@ -34,6 +34,21 @@ vim.api.nvim_create_autocmd("PackChanged", {
 			vim.cmd("TSUpdate")
 		end
 	end,
+})
+
+vim.api.nvim_create_autocmd("LspAttach", {
+	group = vim.api.nvim_create_augroup("lsp_attach_disable_ruff_hover", { clear = true }),
+	callback = function(args)
+		local client = vim.lsp.get_client_by_id(args.data.client_id)
+		if client == nil then
+			return
+		end
+		if client.name == "ruff" then
+			-- Disable hover in favor of Pyright
+			client.server_capabilities.hoverProvider = false
+		end
+	end,
+	desc = "LSP: Disable hover capability from Ruff",
 })
 
 vim.api.nvim_create_autocmd("LspAttach", {
@@ -50,6 +65,7 @@ vim.api.nvim_create_autocmd("LspAttach", {
 				autotrigger = true,
 			})
 		end
+		vim.keymap.set("n", "K", "<Nop>", { buffer = args.buf, desc = "which_key_ignore" })
 	end,
 })
 
@@ -60,10 +76,32 @@ vim.pack.add({
 	"https://github.com/nvim-lua/plenary.nvim",
 	"https://github.com/mason-org/mason.nvim",
 	"https://github.com/nvimtools/none-ls.nvim",
+	"https://github.com/dgagn/diagflow.nvim",
 	"https://github.com/christoomey/vim-tmux-navigator",
 })
 
+require("diagflow").setup({ toggle_event = { "InsertEnter", "InsertLeave" } })
+vim.diagnostic.config({
+	underline = false,
+	signs = {
+		active = true,
+		text = {
+			[vim.diagnostic.severity.ERROR] = "",
+			[vim.diagnostic.severity.WARN] = "",
+			[vim.diagnostic.severity.HINT] = "󰟃",
+			[vim.diagnostic.severity.INFO] = "",
+		},
+	},
+	virtual_text = false,
+	float = {
+		border = "rounded",
+		format = function(diagnostic)
+			return string.format("%s (%s)", diagnostic.message, diagnostic.source)
+		end,
+	},
+})
 require("nvim-treesitter").install({
+	"bash",
 	"css",
 	"html",
 	"javascript",
@@ -89,7 +127,21 @@ local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities.textDocument.completion.completionItem.snippetSupport = true
 
 -- https://github.com/neovim/nvim-lspconfig/blob/master/doc/configs.md
+vim.lsp.config("pyright", {
+	settings = {
+		pyright = {
+			disableOrganizeImports = true,
+		},
+		python = {
+			analysis = {
+				ignore = { "*" },
+			},
+		},
+	},
+})
 vim.lsp.enable("pyright")
+-- vim.lsp.enable("basedpyright")
+-- vim.lsp.enable("pylsp")
 vim.lsp.enable("jsonls")
 vim.lsp.enable("tombi")
 vim.lsp.config("cssls", {
@@ -101,6 +153,18 @@ vim.lsp.config("html", {
 })
 vim.lsp.enable("html")
 vim.lsp.enable("texlab")
+vim.lsp.config("ruff", {
+	init_options = {
+		settings = {
+			lineLength = 80,
+			configuration = {
+				format = {
+					["quote-style"] = "double",
+				},
+			},
+		},
+	},
+})
 vim.lsp.enable("ruff")
 vim.lsp.config("lua_ls", { settings = { Lua = { diagnostics = { globals = { "vim" } } } } })
 vim.lsp.enable("lua_ls")

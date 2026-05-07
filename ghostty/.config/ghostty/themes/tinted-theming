@@ -1,43 +1,43 @@
 # vim: ft=ghostty
-# Tokyo Night Storm theme for Ghostty
-# Scheme Author: Michaël Ball
+# Nord theme for Ghostty
+# Scheme Author: arcticicestudio
 # Scheme System: base16
 # Template Author: Tinted Terminal (https://github.com/tinted-theming/tinted-terminal)
 
 # Color palette
-palette = 0=#24283b
-palette = 1=#c0caf5
-palette = 2=#9ece6a
-palette = 3=#0db9d7
-palette = 4=#2ac3de
-palette = 5=#bb9af7
-palette = 6=#b4f9f8
-palette = 7=#a9b1d6
-palette = 8=#444b6a
-palette = 9=#c0caf5
-palette = 10=#9ece6a
-palette = 11=#0db9d7
-palette = 12=#2ac3de
-palette = 13=#bb9af7
-palette = 14=#b4f9f8
-palette = 15=#d5d6db
-palette = 16=#a9b1d6
-palette = 17=#f7768e
-palette = 18=#16161e
-palette = 19=#343a52
-palette = 20=#787c99
-palette = 21=#cbccd1
+palette = 0=#2e3440
+palette = 1=#bf616a
+palette = 2=#a3be8c
+palette = 3=#ebcb8b
+palette = 4=#81a1c1
+palette = 5=#b48ead
+palette = 6=#88c0d0
+palette = 7=#e5e9f0
+palette = 8=#4c566a
+palette = 9=#bf616a
+palette = 10=#a3be8c
+palette = 11=#ebcb8b
+palette = 12=#81a1c1
+palette = 13=#b48ead
+palette = 14=#88c0d0
+palette = 15=#8fbcbb
+palette = 16=#d08770
+palette = 17=#5e81ac
+palette = 18=#3b4252
+palette = 19=#434c5e
+palette = 20=#d8dee9
+palette = 21=#eceff4
 
 # Foreground & background colors
-background = #24283b
-foreground = #a9b1d6
-cursor-color = #a9b1d6
-selection-background = #a9b1d6
-selection-foreground = #343a52
+background = #2e3440
+foreground = #e5e9f0
+cursor-color = #e5e9f0
+selection-background = #e5e9f0
+selection-foreground = #434c5e
 
 # Set `macos-icon = custom-style` in your main configuration file to enable theming of the app icon.
 #
 # Set the ghost color to the lightest foreground:
-macos-icon-ghost-color = #d5d6db
+macos-icon-ghost-color = #8fbcbb
 # Replace the official icon's blue background with the designated bright blue color:
-macos-icon-screen-color = #2ac3de
+macos-icon-screen-color = #81a1c1

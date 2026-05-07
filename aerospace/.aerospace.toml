@@ -115,9 +115,7 @@ automatically-unhide-macos-hidden-apps = false
     alt-equal = 'resize smart +50'
 
     # See: https://nikitabobko.github.io/AeroSpace/commands#workspace
-    alt-1 = 'workspace 1'
-    alt-2 = 'workspace 2'
-    alt-e = 'workspace E' #explore (Safari, Chrome, ChatGPT)
+    alt-e = 'workspace E' #explore (Safari, Firefox, Qutebrowser, ChatGPT)
     alt-w = 'workspace W' #world (Mail, Messages, WhatsApp)
     alt-a = 'workspace A' #apple (Notes, Calendar)
     alt-s = 'workspace S' #edit (Sublime Text, Sublime Merge, Obsidian)
@@ -126,8 +124,6 @@ automatically-unhide-macos-hidden-apps = false
     alt-g = 'workspace G' #graphics (Photo)
     
     # See: https://nikitabobko.github.io/AeroSpace/commands#move-node-to-workspace
-    alt-shift-1 = 'move-node-to-workspace 1'
-    alt-shift-2 = 'move-node-to-workspace 2'
     alt-shift-e = 'move-node-to-workspace E'
     alt-shift-w = 'move-node-to-workspace W'
     alt-shift-a = 'move-node-to-workspace A'
