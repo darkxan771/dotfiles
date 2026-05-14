@@ -3,6 +3,7 @@ $env.config.show_banner = false
 $env.EDITOR = "nvim"
 $env.MANPAGER = "nvim +Man!"
 $env.HOMEBREW_NO_ENV_HINTS = 1
+$env.XDG_CONFIG_HOME = "/Users/meliot/.config/"
 
 # PATH
 use std/util "path add"
@@ -99,6 +100,10 @@ def --env y [...args] {
 # ZOXIDE
 source ~/.zoxide.nu
 
+# TELEVISION
+mkdir ($nu.data-dir | path join "vendor/autoload")
+tv init nu | save -f ($nu.data-dir | path join "vendor/autoload/tv.nu")
+
 # STARSHIP
 mkdir ($nu.data-dir | path join "vendor/autoload")
 starship init nu | save -f ($nu.data-dir | path join "vendor/autoload/starship.nu")
@@ -113,6 +118,11 @@ def update-python [] {
 
 alias update-brew = brew upgrade
 alias update-latex = sudo tlmgr update --all
+
+# SKIM
+def skim [args] { 
+  /Applications/Skim.app/Contents/MacOS/Skim $args ;
+}
 
 # NVIM
 alias v = nvim

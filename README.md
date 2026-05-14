@@ -10,6 +10,7 @@
 - Nvim: .config/nvim/
 - Qutebrowser: .qutebrowser/
 - Starship: .config/starship.toml
+- Television: .config/television/
 - Tinted: .config/tinted-theming/
 - Tmux : .tmux/, .tmux.conf
 - Yazi: .config/yazi/

@@ -1,6 +1,7 @@
 vim.pack.add({
 	"https://github.com/nvim-lualine/lualine.nvim",
 	"https://github.com/akinsho/bufferline.nvim",
+	"https://github.com/rachartier/tiny-cmdline.nvim",
 })
 
 require("lualine").setup({
@@ -18,6 +19,7 @@ require("lualine").setup({
 			lualine = true,
 		},
 	},
+	extensions = { "mason", "oil" },
 })
 
 local bufferline = require("bufferline")
@@ -30,4 +32,17 @@ bufferline.setup({
 		always_show_bufferline = false,
 		auto_toggle_bufferline = true,
 	},
+})
+
+require("tiny-cmdline").setup({
+	width = {
+		value = "60%",
+		min = 40,
+		max = 80,
+	},
+	position = {
+		x = "100%",
+		y = "85%",
+	},
+	border = "rounded",
 })

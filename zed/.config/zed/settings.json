@@ -7,13 +7,17 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
-  "base_keymap": "SublimeText",
-  "vim_mode": false,
-  "ui_font_size": 16,
-  "buffer_font_size": 15,
-  "theme": {
-    "mode": "system",
-    "light": "One Light",
-    "dark": "One Dark",
-  },
+    "icon_theme": "Catppuccin Frappé",
+    "vim_mode": true,
+    "ui_font_family": ".SystemUIFont",
+    "ui_font_size": 16,
+    "buffer_font_family": "Victor Mono",
+    "buffer_font_size": 15,
+    "theme": "Tokyo Night Storm",
+    "toolbar": { "breadcrumbs": false, "quick_actions": false },
+    "tabs": { "file_icons": true, "show_close_button": "hidden" },
+    "format_on_save": "on",
+    "tab_size": 4,
+    "cursor_blink": false,
+    "disable_ai": true,
 }

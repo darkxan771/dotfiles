@@ -1,1 +1,4 @@
-[{ "prefix": "python", "body": "```python\n$0\n```", "desc": "Python code" }]
+[
+  { "prefix": "python", "body": "```python\n$0\n```", "desc": "Python code" },
+  { "prefix": "bash", "body": "```bash\n$0\n```", "desc": "Bash code" }
+]

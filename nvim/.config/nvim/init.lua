@@ -236,3 +236,4 @@ require("config.accents")
 -- UPDATE
 vim.keymap.set("n", "<leader>uu", "<cmd>lua vim.pack.update()<cr>", { desc = "Update all packages" })
 vim.keymap.set("n", "<leader>um", "<cmd>Mason<cr>", { desc = "Update Mason" })
+vim.keymap.set("n", "<leader>ur", "<cmd>restart<cr>", { desc = "Restart" })

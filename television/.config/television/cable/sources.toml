@@ -1,0 +1,19 @@
+[metadata]
+name = "sources"
+description = "Browse Books and Papers"
+requirements = ["fd"]
+
+[source]
+command = [
+  { name = "Default", run = 'fd -t f pdf `/Users/meliot/Library/Mobile Documents/com~apple~CloudDocs/Sources`' },
+  { name = "Books",  run = 'fd -t f pdf `/Users/meliot/Library/Mobile Documents/com~apple~CloudDocs/Sources/Books`' },
+  { name = "Papers",  run = 'fd -t f pdf `/Users/meliot/Library/Mobile Documents/com~apple~CloudDocs/Sources/Papers`' },
+]
+
+[keybindings]
+enter = "actions:open"
+
+[actions.open]
+description = "Open the selected PDF with default viewer"
+command = "start {} | complete"
+mode = "fork"

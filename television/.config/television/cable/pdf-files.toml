@@ -1,0 +1,19 @@
+[metadata]
+name = "pdf-files"
+description = "Browse PDF files"
+requirements = ["fd"]
+
+[source]
+command = [
+  { name = "Default", run = "fd -t f -e pdf ." },
+  { name = "Hidden",  run = "fd -t f -e pdf -H ." },
+]
+
+
+[keybindings]
+enter = "actions:open"
+
+[actions.open]
+description = "Open the selected PDF with default viewer"
+command = "start {} | complete"
+mode = "fork"

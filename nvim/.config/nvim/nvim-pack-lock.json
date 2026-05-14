@@ -84,6 +84,10 @@
       "rev": "c0fca5c6123e2f6fb4db9a433cd01f2ce8085a57",
       "src": "https://github.com/tinted-theming/tinted-nvim"
     },
+    "tiny-cmdline.nvim": {
+      "rev": "ad58747b955d0743ccfd56e97da1a4c1fac89f58",
+      "src": "https://github.com/rachartier/tiny-cmdline.nvim"
+    },
     "todo-comments.nvim": {
       "rev": "31e3c38ce9b29781e4422fc0322eb0a21f4e8668",
       "src": "https://github.com/folke/todo-comments.nvim"

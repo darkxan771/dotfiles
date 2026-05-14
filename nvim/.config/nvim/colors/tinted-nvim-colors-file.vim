@@ -1,1 +1,1 @@
-lua require("tinted-nvim").load("base16-nord", { colorscheme_event = false })
+lua require("tinted-nvim").load("base16-dracula", { colorscheme_event = false })

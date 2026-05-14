@@ -13,14 +13,14 @@ require("mini.comment").setup({
 
 require("mini.pairs").setup()
 require("mini.icons").setup()
-require("mini.files").setup()
-
-vim.keymap.set(
-	"n",
-	"<leader>ty",
-	":lua if not MiniFiles.close() then MiniFiles.open() end<CR>",
-	{ desc = "Toggle MiniFiles", silent = true }
-)
+-- require("mini.files").setup()
+--
+-- vim.keymap.set(
+-- 	"n",
+-- 	"<leader>ty",
+-- 	":lua if not MiniFiles.close() then MiniFiles.open() end<CR>",
+-- 	{ desc = "Toggle MiniFiles", silent = true }
+-- )
 
 local snippets = require("mini.snippets")
 local gen_loader = snippets.gen_loader
