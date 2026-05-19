@@ -5,6 +5,9 @@ vim.pack.add({
 
 require("oil").setup({
 	default_file_explorer = true,
+	view_options = {
+		show_hidden = true,
+	},
 	use_default_keymaps = false,
 	delete_to_trash = true,
 	skip_confirm_for_simple_edits = true,
@@ -24,7 +27,12 @@ require("oil").setup({
 		["g."] = { "actions.toggle_hidden", mode = "n" },
 	},
 })
-require("oil-git").setup()
+require("oil-git").setup({
+	show_file_highlights = true,
+	show_directory_highlights = true,
+	show_file_symbols = true,
+	show_directory_symbols = true,
+})
 
 vim.keymap.set("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory" })
-vim.keymap.set("n", "<leader>to", "<CMD>lua require('oil').toggle_float()<CR>", { desc = "Toggle oil floating window" })
+vim.keymap.set("n", "<leader>tn", "<CMD>lua require('oil').toggle_float()<CR>", { desc = "Toggle oil floating window" })

@@ -17,7 +17,6 @@ $java\
 $kotlin\
 $haskell\
 $python\
-$time\
 $character"""
 
 [os]

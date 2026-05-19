@@ -20,6 +20,11 @@ Snacks.setup({
 	layout = { enabled = true },
 	notifier = { enabled = true },
 	picker = {
+		actions = {
+			opencode_send = function(...)
+				return require("opencode").snacks_picker_send(...)
+			end,
+		},
 		enabled = true,
 		ui_select = true,
 		buftype = "prompt",

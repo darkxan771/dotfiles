@@ -37,21 +37,6 @@ vim.api.nvim_create_autocmd("PackChanged", {
 })
 
 vim.api.nvim_create_autocmd("LspAttach", {
-	group = vim.api.nvim_create_augroup("lsp_attach_disable_ruff_hover", { clear = true }),
-	callback = function(args)
-		local client = vim.lsp.get_client_by_id(args.data.client_id)
-		if client == nil then
-			return
-		end
-		if client.name == "ruff" then
-			-- Disable hover in favor of Pyright
-			client.server_capabilities.hoverProvider = false
-		end
-	end,
-	desc = "LSP: Disable hover capability from Ruff",
-})
-
-vim.api.nvim_create_autocmd("LspAttach", {
 	group = vim.api.nvim_create_augroup("lsp_completion", { clear = true }),
 	callback = function(args)
 		local client_id = args.data.client_id
@@ -76,12 +61,10 @@ vim.pack.add({
 	"https://github.com/nvim-lua/plenary.nvim",
 	"https://github.com/mason-org/mason.nvim",
 	"https://github.com/nvimtools/none-ls.nvim",
-	"https://github.com/dgagn/diagflow.nvim",
 	"https://github.com/folke/lazydev.nvim",
 	"https://github.com/christoomey/vim-tmux-navigator",
 })
 
-require("diagflow").setup({ toggle_event = { "InsertEnter", "InsertLeave" } })
 vim.diagnostic.config({
 	underline = false,
 	signs = {
@@ -93,7 +76,7 @@ vim.diagnostic.config({
 			[vim.diagnostic.severity.INFO] = "",
 		},
 	},
-	virtual_text = false,
+	virtual_text = true,
 	float = {
 		border = "rounded",
 		format = function(diagnostic)

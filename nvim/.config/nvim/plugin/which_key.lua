@@ -17,6 +17,7 @@ require("which-key").add({
 	{ "]", group = "Next" },
 	{ "<leader>g", group = "Git" },
 	{ "<leader>l", group = "LaTeX" },
+	{ "<leader>o", group = "OpenCode" },
 	{ "<leader>s", group = "Snacks" },
 	{ "<leader>t", group = "Toggle" },
 	{ "<leader>u", group = "Update" },

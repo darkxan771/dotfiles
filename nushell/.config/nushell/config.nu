@@ -4,6 +4,7 @@ $env.EDITOR = "nvim"
 $env.MANPAGER = "nvim +Man!"
 $env.HOMEBREW_NO_ENV_HINTS = 1
 $env.XDG_CONFIG_HOME = "/Users/meliot/.config/"
+# $env.TERM = "screen-256color-bce"
 
 # PATH
 use std/util "path add"
@@ -25,6 +26,7 @@ alias pokemon = pokemon-colorscripts -r
 alias matrix = cmatrix
 alias home = cd ~
 alias dotfiles = cd ~/dotfiles
+alias downloads = cd ~/downloads
 alias weather = http get wttr.in/tours
 
 # PALETTE
@@ -85,6 +87,7 @@ def "colors current" [] {
 }
 
 source ~/.config/nushell/colors.nu
+source ~/.config/nushell/transparent.nu
 
 # YAZI
 def --env y [...args] {
